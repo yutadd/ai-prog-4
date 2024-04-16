@@ -1,5 +1,5 @@
 # jugyo
-##about 
+## about 
 watashi created kono repository in jugyo
 ## installation
 ```bash
