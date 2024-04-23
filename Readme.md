@@ -7,3 +7,5 @@ conda create -n ai-prog-4
 pip install streamlit
 streamlit hello
 ```
+datasets:
+https://www.stat.go.jp/data/guide/download/index.html
