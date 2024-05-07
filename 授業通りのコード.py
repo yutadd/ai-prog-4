@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
  
  
-df = pd.read_csv(".\\dataset\\c03.csv", encoding="shift_jis")
+df = pd.read_csv(".\\.dataset\\c03.csv", encoding="shift_jis")
 print("head\n", df.head())
 print("dtypes\n", df.dtypes)
 print("describe\n", df.describe())
