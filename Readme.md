@@ -5,7 +5,7 @@ watashi created kono repository in jugyo
 ```bash
 conda create -n ai-prog-4
 pip install streamlit
-streamlit hello
+streamlit run <ファイル名>
 ```
 datasets:
 https://www.stat.go.jp/data/guide/download/index.html
