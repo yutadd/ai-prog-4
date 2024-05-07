@@ -22,6 +22,7 @@ st.title(f"人口の労働力状態 人口の労働力状態")
 
 # 都道府県別フィルタ
 if st.toggle("検索を表示"):
+    isShowingKensaku=True
     st.header("検索")
     colmname = st.selectbox("カラム", df.columns)
     value = st.selectbox("値", df[colmname].unique().tolist())
