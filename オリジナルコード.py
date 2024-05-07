@@ -20,9 +20,10 @@ for col in df.columns[9:]:
     df[col] = df[col].str.replace(',', '').astype(int)
 st.title(f"人口の労働力状態 人口の労働力状態")
 
-
+isShowingKensaku=False
 # 都道府県別フィルタ
 if st.toggle("検索を表示"):
+    isShowingKensaku=True
     st.header("検索")
     colmname = st.selectbox("カラム", df.columns)
     value = st.selectbox("値", df[colmname].unique().tolist())
@@ -30,15 +31,15 @@ if st.toggle("検索を表示"):
     # 列選択用のチェックボックスを作成
     selected_options=["地域_時系列"]+df.columns[9:].tolist()
     options=df.columns.tolist()
-if st.toggle("列の選択を表示"):
-    st.header("列の選択")
-    selected_years = st.multiselect(
-        "表示する列を選択してください",
-        options=options,  # 1950年以降の列名を選択肢として設定
-        default=selected_options  # デフォルトで全ての年を選択
-    )
-    # 選択された年のデータのみを表示
-    df = df[selected_years]
+    if st.toggle("列の選択を表示"):
+        st.header("列の選択")
+        selected_years = st.multiselect(
+            "表示する列を選択してください",
+            options=options,  # 1950年以降の列名を選択肢として設定
+            default=selected_options  # デフォルトで全ての年を選択
+        )
+        # 選択された年のデータのみを表示
+        df = df[selected_years]
 df = df.groupby("地域_時系列").sum()
 st.header("結果")
 st.dataframe(df)
