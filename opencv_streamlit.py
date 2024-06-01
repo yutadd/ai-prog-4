@@ -4,6 +4,9 @@ import streamlit as st
 from PIL import Image  # 追加
 import numpy as np
 from openai import OpenAI
+
+# TODO: ai-prog-4にインストールされたlabelImgを使って名刺を切り抜く処理をアップグレード中
+
 # 画像アップロード
 uploaded_file = st.file_uploader("画像をアップロードしてください", type=["jpg", "jpeg", "png"])
 if uploaded_file is not None:
